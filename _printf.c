@@ -40,6 +40,12 @@ int _printf(const char *format, ...)
 					char_to_print++;
 					break;
 				}
+			case '%':
+				{
+					write(1, "%", 1);
+						char_to_print++;
+					break;
+				}
 			default:
 				{
 					break;
