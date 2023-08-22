@@ -46,6 +46,17 @@ int _printf(const char *format, ...)
 						char_to_print++;
 					break;
 				}
+			case 'd':
+			case 'i':
+				{
+					int num = va_arg(list, int);
+					char str[10];
+					sprintf(str, "%d", num);
+					write(1, str, strlen(str));
+					char_to_print += strlen(str);
+					break;
+				}
+
 			default:
 				{
 					break;
